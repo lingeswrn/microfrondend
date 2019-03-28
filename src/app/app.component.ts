@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'microapp1';
+  count = 0;
+
+  call() {
+    this.count = this.count + 1;
+    const micro2 = document.querySelector('micro-app-2');
+    if (micro2 != null) {
+      micro2['message'] = this.count;
+    }else{
+      console.log("Not found!")
+    }
+  }
 }
